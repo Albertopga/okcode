@@ -1,13 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>films</ion-title>
+    <ion-title class="ion-text-center">Shearch film</ion-title>
   </ion-toolbar>
+  <ion-searchbar placeholder="type title to search" debounce="1000" (ionChange)="search($event)"></ion-searchbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngIf="filmsSearch !== null" [routerLink]="['/detail',filmsSearch.title]">
-      {{filmsSearch.title}}
+    <ion-item *ngIf="filmsSearch !== null">
+      <ion-label [routerLink]="['/detail',filmsSearch.title]" *ngIf="filmsSearch.title !== undefined">{{filmsSearch.title}}</ion-label>
+      <ion-label *ngIf="filmsSearch.title == undefined">Film not found</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

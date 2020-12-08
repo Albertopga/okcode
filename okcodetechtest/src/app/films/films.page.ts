@@ -14,7 +14,11 @@ export class FilmsPage implements OnInit {
     this.filmsSearch = null;
   }
 
-  async ngOnInit() {
-    this.filmsSearch = await this.filmsService.getFilmeByTitle("blade");
+  ngOnInit() {}
+
+  async search(event: any) {
+    let title = event.detail.value.trim();
+    title = title.replace(" ", "+");
+    this.filmsSearch = await this.filmsService.getFilmeByTitle(title);
   }
 }
