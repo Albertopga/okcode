@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button slot="start">
+    <ion-button slot="start" fill="outline">
       <ion-back-button defaultHref="/films" >
       </ion-back-button>
     </ion-button>
@@ -9,7 +9,7 @@
 </ion-header>
 
 <ion-content *ngIf="filmSearch !== undefined">
-  <ion-grid class="ion-no-padding">
+  <ion-grid class="ion-no-padding" >
     <ion-row class="ion-text-start">
       <ion-col class="ion-no-padding">
         <img src="{{filmSearch.poster}}" alt="title">
@@ -39,7 +39,6 @@
           <ion-label>Plot:</ion-label>
           <ion-text>{{filmSearch.plot}}</ion-text>
         </ion-item>
-
       </ion-col>
     </ion-row>
   </ion-grid>

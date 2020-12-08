@@ -17,7 +17,6 @@ export class FilmDetailPage implements OnInit {
 
   ngOnInit() {
     this._route.params.subscribe(async (params) => {
-      // TODO:validate params
       const { filmTitle } = params;
       this.filmSearch = await this.filmsService.getFilmeByTitle(filmTitle);
     });

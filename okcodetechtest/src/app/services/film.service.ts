@@ -11,11 +11,15 @@ export class FilmService {
   constructor() {}
 
   async getFilmeByTitle(title: string): Promise<Film | null> {
-    const fetchResponse = await fetch(
-      `${this.apiUrl}?t=${title}&apikey=${this.apiKey}`
-    );
-    const data = await fetchResponse.json();
-    return parseFilm(data);
+    try {
+      const fetchResponse = await fetch(
+        `${this.apiUrl}?t=${title}&apikey=${this.apiKey}`
+      );
+      const data = await fetchResponse.json();
+      return parseFilm(data);
+    } catch (e) {
+      console.log(`ERROR: ${e}`);
+    }
   }
 }
 
