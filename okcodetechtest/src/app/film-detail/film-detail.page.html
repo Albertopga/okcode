@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/films" >
+      </ion-back-button>
+    </ion-button>
+    <ion-title *ngIf="filmSearch !== undefined">{{filmSearch.title}}:{{filmSearch.year}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="filmSearch !== undefined">
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-text-start">
+      <ion-col class="ion-no-padding">
+        <img src="{{filmSearch.poster}}" alt="title">
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Director:</ion-label>
+          <ion-text>{{filmSearch.director}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Actors:</ion-label>
+          <ion-text>{{filmSearch.actors}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Genre:</ion-label>
+          <ion-text>{{filmSearch.genre}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Year:</ion-label>
+          <ion-text>{{filmSearch.year}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Language:</ion-label>
+          <ion-text>{{filmSearch.language}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Plot:</ion-label>
+          <ion-text>{{filmSearch.plot}}</ion-text>
+        </ion-item>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+</ion-content>
